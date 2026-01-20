@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mobile auto detailing by two local high schoolers. Book online, view our work, and read customer reviews." />
+  <title>Exotic Detailers | Mobile Auto Detailing</title>
+
+  <style>
+:root{
+  --bg: #ffffff;
+
+  /* Surfaces */
+  --panel: rgba(0,0,0,0.04);
+  --panel2: rgba(0,0,0,0.06);
+
+  /* Text */
+  --text: #0D0D0D;
+  --muted: rgba(13,13,13,0.85);
+
+  /* Accents */
+  --accent: #4430BC;
+  --accent2: #2EC4FF;
+
+  /* Lines + shadows */
+  --border: rgba(13,13,13,0.14);
+  --shadow: 0 12px 40px rgba(0,0,0,0.12);
+
+  --radius: 18px;
+  --max: 1100px;
+}
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background:
+  radial-gradient(1200px 600px at 15% 10%, rgba(68,48,188,0.10), transparent 60%),
+  radial-gradient(900px 500px at 85% 30%, rgba(46,196,255,0.12), transparent 55%),
+  var(--bg);
+
+      color: var(--text);
+    }
+
+    a{ color: inherit; text-decoration: none; }
+   .container{
+  width: min(var(--max), calc(100% - 64px));
+  margin: 0 auto;
+}
+@media (max-width: 760px){
+  .container{ width: min(var(--max), calc(100% - 32px)); }
+}
+
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.75);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 700; letter-spacing: 0.3px;
+    }
+    .logo{
+      width: 34px; height: 34px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #7de3ff);
+      box-shadow: 0 10px 25px rgba(0,168,232,0.25);
+    }
+
+    .nav-links{
+      display:flex; align-items:center; gap: 18px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .nav-links a:hover{ color: var(--text); }
+
+    .cta{
+      display:flex; align-items:center; gap: 10px;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.22); }
+    .btn.primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-color: rgba(255,255,255,0.18);
+}
+    .btn.primary:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+
+    .hamburger{
+      display:none;
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      align-items:center; justify-content:center;
+    }
+    .hamburger span{
+      display:block; width: 18px; height: 2px; background: var(--text);
+      position: relative;
+    }
+    .hamburger span::before, .hamburger span::after{
+      content:""; position:absolute; left:0; width: 18px; height: 2px; background: var(--text);
+    }
+    .hamburger span::before{ top:-6px; }
+    .hamburger span::after{ top:6px; }
+
+    /* Mobile nav panel */
+    .mobile-panel{
+      display:none;
+      padding: 8px 0 16px;
+    }
+    .mobile-panel a{
+      display:block;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .mobile-panel a:hover{ color: var(--text); }
+
+    /* Hero */
+    .hero{
+      padding: 56px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .hero-card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-main{ padding: 26px; }
+    .kicker{
+      display:inline-flex;
+      gap: 8px; align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0,168,232,0.14);
+      border: 1px solid rgba(0,168,232,0.25);
+      color: rgba(13,13,13,0.92);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.06;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15.5px;
+      max-width: 60ch;
+    }
+    .hero-actions{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .trust-row{
+      display:flex; gap: 14px; flex-wrap: wrap;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .trust-pill{
+      display:flex; gap: 8px; align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-side{
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mini{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      padding: 14px;
+    }
+    .mini h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+    .mini p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 13.5px;
+    }
+    .mini ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+    .mini strong{ color: var(--text); }
+
+    /* Sections */
+    section{ padding: 34px 0; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin-bottom: 14px;
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 13.5px;
+      line-height: 1.35;
+      max-width: 52ch;
+    }
+
+    .grid{
+      display:grid;
+      gap: 14px;
+    }
+    .grid.two{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid.three{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+      overflow:hidden;
+    }
+    .card-pad{ padding: 18px; }
+
+    /* Booking */
+    .embed-frame{
+      width: 100%;
+      min-height: 560px;
+      border: 1px dashed rgba(13,13,13,0.28);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 18px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+    .embed-frame small{
+      display:block;
+      font-weight: 650;
+      color: rgba(13,13,13,0.62);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* Reviews */
+   .stars{
+  letter-spacing: 1px;
+  color: #4430BC; /* or var(--accent) */
+  font-size: 13px;
+}
+    .review{
+      display:flex; flex-direction:column; gap: 10px;
+    }
+   .review blockquote{
+  margin:0;
+  color: #0D0D0D;
+  line-height: 1.55;
+  font-weight: 650;
+}
+.review .who{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 10px;
+  color: rgba(13,13,13,0.80);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .shot{
+      grid-column: span 4;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      position: relative;
+      min-height: 170px;
+    }
+    .shot img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.03) contrast(1.02);
+      transform: scale(1.01);
+      transition: transform 0.2s ease;
+    }
+    .shot:hover img{ transform: scale(1.06); }
+
+    .shot .label{
+      position:absolute;
+      left: 12px; bottom: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(13,13,13,0.12);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 12.5px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* About */
+    .profile{
+      display:flex; gap: 14px; align-items:flex-start;
+    }
+    .avatar{
+      width: 54px; height: 54px; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(0,168,232,0.85), rgba(44,83,100,0.85));
+      border: 1px solid rgba(255,255,255,0.20);
+      flex: 0 0 auto;
+    }
+    .profile h3{ margin: 0 0 6px; font-size: 16px; }
+    .profile p{ margin: 0; color: var(--muted); line-height: 1.55; font-weight: 650; }
+    .tags{ margin-top: 10px; display:flex; flex-wrap:wrap; gap: 8px; }
+  .tag{
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(13,13,13,0.12);
+  color: #0D0D0D;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+
+    /* Contact/Footer */
+    footer{ padding: 26px 0 34px; color: var(--muted); }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .contact-list{
+      display:grid; gap: 10px;
+      margin-top: 10px;
+    }
+ .contact-item{
+  display:flex; justify-content:space-between; gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.03);
+  font-weight: 750;
+  color: #0D0D0D;
+}
+.contact-item span:last-child{
+  color: rgba(13,13,13,0.75);
+  font-weight: 700;
+  text-align:right;
+
+}
+    /* Lightbox */
+    .lightbox{
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,0.72);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox-inner{
+      width: min(980px, 100%);
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(11,18,32,0.92);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.55);
+      position: relative;
+    }
+    .lightbox-inner img{
+      width: 100%;
+      height: auto;
+      display:block;
+    }
+    .lightbox-close{
+      position:absolute; top: 12px; right: 12px;
+      border-radius: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(0,0,0,0.35);
+      color: rgba(13,13,13,0.92);
+      font-weight: 900;
+      cursor:pointer;
+    }
+
+    /* Sticky Book Now (mobile) */
+    .sticky-book{
+      position: fixed;
+      left: 18px; right: 18px; bottom: 16px;
+      display:none;
+      z-index: 60;
+    }
+    .sticky-book .btn{
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.50);
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid.three{ grid-template-columns: 1fr; }
+      .grid.two{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: repeat(6, 1fr); }
+      .shot{ grid-column: span 3; }
+      .footer-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px){
+      .nav-links, .cta .btn:not(.primary){ display:none; }
+      .hamburger{ display:flex; }
+      .mobile-panel{ display:none; }
+      .mobile-panel.open{ display:block; }
+      .sticky-book{ display:block; }
+      .gallery{ grid-template-columns: repeat(2, 1fr); }
+      .shot{ grid-column: span 1; min-height: 150px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="logo" aria-hidden="true"></div>
+          <div>Exotic Detailers</div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#booking">Booking</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn primary" href="#booking">Book Now</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" aria-label="Mobile menu">
+        <a href="#booking">Booking</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="hero-main">
+              <div class="kicker">Mobile detailing • We come to you</div>
+              <h1>Showroom-level clean, right in your driveway, for an affordable price.</h1>
+              <p class="lead">
+                We’re two high schoolers in the Omaha area running a professional mobile detailing service.
+                Transparent pricing, good communication, and results that speak for themselves.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#booking">Book an Appointment</a>
+                <a class="btn" href="#gallery">See Our Work</a>
+                <a class="btn" href="#reviews">Read Reviews</a>
+              </div>
+
+              <div class="trust-row" aria-label="Highlights">
+                <div class="trust-pill">We offer flexible scheduling, multiple packages, and we are local and reliable!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-side">
+              <div class="mini">
+                <h3>Popular services</h3>
+                <ul>
+                  <li><strong>Exterior Wash</strong> (exterior deep-clean + wipe-down)</li>
+                  <li><strong>Interior Reset</strong> (vacuum, seats, windows)</li>
+                  <li><strong>Full Detail</strong> (interior + exterior deep clean)</li>
+                  <li><strong>Add-ons</strong> (pet hair, child seat cleaning, clay bar treatment, etc.)</li>
+                </ul>
+              </div>
+
+              <div class="mini">
+                <h3>Service area</h3>
+                <p>
+                  Omaha, Gretna, Elkhorn, Papillion
+                </p>
+              </div>
+
+              <div class="mini">
+                <h3>Fast contact</h3>
+                <p>
+                  Text: <strong><a href="tel:+14026199696">(402)619-9696</a></strong><br/>
+                  Email: <strong><a href="mailto:exoticdetailers00@email.com">exoticdetailers00@email.com</a></strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Booking</h2>
+            <p>Reserve a time with us today!.</p>
+          </div>
+          <a class="btn primary" href="#contact">Questions?</a>
+        </div>
+
+        <div class="card">
+          <div class="card-pad">
+           <!-- Start Square Appointments Embed Code -->
+<script src='https://square.site/appointments/buyer/widget/dr8tm3jhl8j3hv/L9FFVPCXBDEJK.js'></script>
+<!-- End Square Appointments Embed Code -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Customer Reviews</h2>
+            <p>Replace these with real quotes (Google reviews, texts, or DMs — with permission).</p>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="card-pad review">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “They showed up on time, explained everything, and my interior looked brand new. Worth it.”
+              </blockquote>
+              <div class="who">
+                <span>— Jordan M.</span><span>Full Detail</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad review">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “Best mobile detail I’ve had. The paint looked brighter and the windows were spotless.”
+              </blockquote>
+              <div class="who">
+                <span>— Taylor R.</span><span>Exterior + Add-ons</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad review">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “Super professional and the car smelled clean without that strong chemical odor.”
+              </blockquote>
+              <div class="who">
+                <span>— Casey L.</span><span>Interior Reset</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Gallery</h2>
+            <p>Swap the image files with your before/after photos. Click any image to enlarge.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-pad">
+            <div class="gallery" aria-label="Gallery grid">
+              <!-- Replace src values with your images (recommended: 1200px wide JPG/WebP). -->
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 1" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Exterior</figcaption>
+              </figure>
+
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 2" src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Interior</figcaption>
+              </figure>
+
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1517524206127-48bbd363f3f7?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 3" src="https://images.unsplash.com/photo-1517524206127-48bbd363f3f7?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Seats</figcaption>
+              </figure>
+
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 4" src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Paint</figcaption>
+              </figure>
+
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 5" src="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Wheels</figcaption>
+              </figure>
+
+              <figure class="shot" data-full="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80">
+                <img alt="Detailing example 6" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"/>
+                <figcaption class="label">Finish</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>About the Owners</h2>
+            <p>Short, real, and professional builds trust. Replace names and bios below.</p>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-pad">
+              <div class="profile">
+                <div class="avatar" aria-hidden="true"></div>
+                <div>
+                  <h3>Owen Mathews</h3>
+                  <p>
+                   Owen is a co-owner known for his attention to detail and commitment to doing every job the right way. He’s also the brain behind day-to-day operations—organizing schedules, refining the process, and communicating clearly with customers to ensure every service runs smoothly from start to finish.
+                  </p>
+                  <div class="tags" aria-label="Skills">
+                    <span class="tag">Operations</span>
+                    <span class="tag">Customer communication</span>
+                    <span class="tag">Commitment to Detail</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad">
+              <div class="profile">
+                <div class="avatar" aria-hidden="true"></div>
+                <div>
+                  <h3>Aidan Erkes</h3>
+                  <p>
+                   Aidan is a co-owner who leads product selection and inventory management, ensuring the team uses the right materials for every service and stays fully stocked for mobile appointments. He also manages customer communication—answering questions, confirming details, and keeping clients updated from booking through completion.
+                  </p>
+                  <div class="tags" aria-label="Skills">
+                    <span class="tag">Inventory</span>
+                    <span class="tag">Customer Communication</span>
+                    <span class="tag">Product Selection</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>Quick questions, special requests, or pricing. Keep it easy to reach you.</p>
+          </div>
+        </div>
+
+        <div class="footer-grid">
+          <div class="card">
+            <div class="card-pad">
+              <h3 style="margin:0 0 10px; font-size:16px;">Service notes</h3>
+              <p style="margin:0; color: var(--muted); line-height:1.6; font-weight:650;">
+              We use customers water and electricity but we do bring our own hoses and extension cords. Please ensure there is an outdoor spigot and outlet accessible near the car. Vehicle should be parked with enough room to work around. Please remove any personal items before we arrive. We require a 24 hour notice if you plan to cancel your appointment. Weather may require rescheduling due to safety and quality concerns. We can't wait to see you soon!
+              </p>
+
+              <div class="contact-list" style="margin-top:14px;">
+                <div class="contact-item">
+                  <span>Text / Call</span><a href="tel:+14026199696">(402)619-9696</a>
+                </div>
+                <div class="contact-item">
+                  <span>Email</span><a href="mailto:exoticdetailers00@email.com">exoticdetailers00@email.com</a>
+                </div>
+                <div class="contact-item">
+                  <span>Service Area</span><span>Omaha + nearby suburbs</span>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+                <a class="btn primary" href="#booking">Book Now</a>
+                <a class="btn" href="#gallery">View Gallery</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad">
+              <h3 style="margin:0 0 10px; font-size:16px;">Hours (When weather permits)</h3>
+              <div class="contact-list">
+                <div class="contact-item"><span>Mon–Fri</span><span>After school + evenings</span></div>
+                <div class="contact-item"><span>Saturday</span><span>9am–6pm</span></div>
+                <div class="contact-item"><span>Sunday</span><span>By request</span></div>
+              </div>
+
+              <p style="margin:14px 0 0; color: rgba(13,13,13,0.65); line-height:1.6; font-weight:650;">
+                            </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="container" style="margin-top: 18px;">
+          <div style="display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;">
+            <div>© <span id="year"></span> Exotic Detailers. All rights reserved.</div>
+            <div style="color: rgba(13,13,13,0.55); font-weight: 700;">Mobile Auto Detailing</div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Book Now (mobile) -->
+  <div class="sticky-book" aria-label="Sticky booking button">
+    <a class="btn primary" href="#booking">Book Now</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">Close</button>
+      <img id="lightboxImg" alt="Expanded gallery view" />
+    </div>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+    hamburger?.addEventListener('click', () => {
+      mobilePanel.classList.toggle('open');
+    });
+    // Close mobile menu after click
+    mobilePanel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobilePanel.classList.remove('open'));
+    });
+
+    // Gallery lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.shot').forEach(el => {
+      el.addEventListener('click', () => {
+        const full = el.getAttribute('data-full');
+        if (!full) return;
+        lightboxImg.src = full;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  </script>
+</body>
+</html>
