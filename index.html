@@ -71,8 +71,7 @@
     }
     .logo{
       width: 34px; height: 34px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), #7de3ff);
-      box-shadow: 0 10px 25px rgba(0,168,232,0.25);
+     object-fit: cover;
     }
 
     .nav-links{
@@ -275,7 +274,7 @@
     /* Booking */
     .embed-frame{
       width: 100%;
-      min-height: 560px;
+      min-height: 700px;
       border: 1px dashed rgba(13,13,13,0.28);
       border-radius: 16px;
       background: rgba(0,0,0,0.18);
@@ -484,7 +483,7 @@
     <div class="container">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Home">
-          <div class="logo" aria-hidden="true"></div>
+          <img src="Logo.png" alt="Exotic Detailers Logo" class="logo">
           <div>Exotic Detailers</div>
         </a>
 
@@ -548,7 +547,7 @@
                   <li><strong>Exterior Wash</strong> (exterior deep-clean + wipe-down)</li>
                   <li><strong>Interior Reset</strong> (vacuum, seats, windows)</li>
                   <li><strong>Full Detail</strong> (interior + exterior deep clean)</li>
-                  <li><strong>Add-ons</strong> (pet hair, child seat cleaning, clay bar treatment, etc.)</li>
+                  <li><strong>Add-ons</strong> (pet hair, child seat cleaning, etc.)</li>
                 </ul>
               </div>
 
@@ -650,7 +649,7 @@
         <div class="section-head">
           <div>
             <h2>Gallery</h2>
-            <p>Swap the image files with your before/after photos. Click any image to enlarge.</p>
+            <p>Click any image to enlarge.</p>
           </div>
         </div>
 
@@ -658,34 +657,34 @@
           <div class="card-pad">
             <div class="gallery" aria-label="Gallery grid">
               <!-- Replace src values with your images (recommended: 1200px wide JPG/WebP). -->
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 1" src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Exterior</figcaption>
+              <figure class="shot" data-full="exterior-1.jpeg">
+                <img alt="interior & exterior clean" src="exterior-1.jpeg"/>
+                <figcaption class="label">Interior & Exterior</figcaption>
               </figure>
 
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 2" src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Interior</figcaption>
+              <figure class="shot" data-full="Interior-1.jpeg">
+                <img alt="Interior Clean" src="Interior-1.jpeg"/>
+                <figcaption class="label">Interior Drvier</figcaption>
               </figure>
 
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1517524206127-48bbd363f3f7?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 3" src="https://images.unsplash.com/photo-1517524206127-48bbd363f3f7?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Seats</figcaption>
+              <figure class="shot" data-full="exterior-3.jpeg">
+                <img alt="Exterior Clean" src="exterior-3.jpeg"/>
+                <figcaption class="label">Exterior side view</figcaption>
               </figure>
 
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 4" src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Paint</figcaption>
+              <figure class="shot" data-full="exterior-6.jpeg">
+                <img alt="Exterior Detail front view" src="exterior-6.jpeg"/>
+                <figcaption class="label">Exterior front view</figcaption>
               </figure>
 
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 5" src="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Wheels</figcaption>
+              <figure class="shot" data-full="Interior-3.jpeg">
+                <img alt="Interior Detail" src="Interior-3.jpeg"/>
+                <figcaption class="label">Interior Passenger</figcaption>
               </figure>
 
-              <figure class="shot" data-full="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80">
-                <img alt="Detailing example 6" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"/>
-                <figcaption class="label">Finish</figcaption>
+              <figure class="shot" data-full="exterior-soap.png">
+                <img alt="Exterior soapy car" src="exterior-soap.png"/>
+                <figcaption class="label">Exterior clean</figcaption>
               </figure>
             </div>
           </div>
@@ -726,7 +725,7 @@
           <div class="card">
             <div class="card-pad">
               <div class="profile">
-                <div class="avatar" aria-hidden="true"></div>
+                <img src="Aidan.jpeg" alt="Aidan Erkes" class="avatar"
                 <div>
                   <h3>Aidan Erkes</h3>
                   <p>
@@ -760,7 +759,7 @@
             <div class="card-pad">
               <h3 style="margin:0 0 10px; font-size:16px;">Service notes</h3>
               <p style="margin:0; color: var(--muted); line-height:1.6; font-weight:650;">
-              We use customers water and electricity but we do bring our own hoses and extension cords. Please ensure there is an outdoor spigot and outlet accessible near the car. Vehicle should be parked with enough room to work around. Please remove any personal items before we arrive. We require a 24 hour notice if you plan to cancel your appointment. Weather may require rescheduling due to safety and quality concerns. We can't wait to see you soon!
+              We use customer's water and electricity but we do bring our own hoses and extension cords. Please ensure there is an outdoor spigot and outlet accessible near the car. Vehicle should be parked with enough room to work around. Please remove any personal items before we arrive. We require a 24 hour notice if you plan to cancel your appointment. Weather may require rescheduling due to safety and quality concerns. We can't wait to see you soon!
               </p>
 
               <div class="contact-list" style="margin-top:14px;">
@@ -866,3 +865,4 @@
   </script>
 </body>
 </html>
+
