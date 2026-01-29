@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mobile auto detailing by two local high schoolers. Book online, view our work, and read customer reviews." />
+  <meta name="description" content="Mobile auto detailing by two local high school seniors. Book online, view our work, and read customer reviews." />
   <title>Exotic Detailers | Mobile Auto Detailing</title>
+  <link rel="icon" href="/images/Logo.png" type="image/png" />
 
   <style>
 :root{
@@ -439,16 +440,16 @@
       height: auto;
       display:block;
     }
-    .lightbox-close{
-      position:absolute; top: 12px; right: 12px;
-      border-radius: 12px;
-      padding: 10px 12px;
-      border: 1px solid rgba(255,255,255,0.20);
-      background: rgba(0,0,0,0.35);
-      color: rgba(13,13,13,0.92);
-      font-weight: 900;
-      cursor:pointer;
-    }
+   .lightbox-close{
+  position:absolute; top: 12px; right: 12px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.92);
+  font-weight: 900;
+  cursor:pointer;
+}
 
     /* Sticky Book Now (mobile) */
     .sticky-book{
@@ -490,7 +491,7 @@
     <div class="container">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Home">
-          <img src="/images/Logo.png" alt="Exotic Detailers Logo" class="logo" />
+         <img src="/images/Logo.png" alt="Exotic Detailers Logo" class="logo" />
           <div>Exotic Detailers</div>
         </a>
 
@@ -503,7 +504,7 @@
         </nav>
 
         <div class="cta">
-          <a class="btn primary" href="#booking">Book Now</a>
+        <a class="btn primary" href="#booking-widget">Book Now</a>
           <button class="hamburger" id="hamburger" aria-label="Open menu">
             <span></span>
           </button>
@@ -589,11 +590,15 @@
           <a class="btn primary" href="#contact">Questions?</a>
         </div>
 
-        <div class="card">
-          <div class="card-pad">
+       <div class="card" id="booking-widget">
+  <div class="card-pad">
            <!-- Start Square Appointments Embed Code -->
 <script src='https://square.site/appointments/buyer/widget/dr8tm3jhl8j3hv/L9FFVPCXBDEJK.js'></script>
 <!-- End Square Appointments Embed Code -->
+<div style="margin-top:14px; color: var(--muted); font-weight: 650; line-height:1.6;">
+  <strong style="color: var(--text);">What to expect:</strong>
+  Choose a package → pick a time → we accept your appointment → we arrive and detail on-site.
+</div>
 
           </div>
         </div>
@@ -606,10 +611,9 @@
         <div class="section-head">
           <div>
             <h2>Customer Reviews</h2>
-            <p>Replace these with real quotes (Google reviews, texts, or DMs — with permission).</p>
+            <p>Real feedback from customers in the Omaha area. Consistent communication, on-time arrival, and results you can see.</p>
           </div>
         </div>
-
         <div class="grid three">
           <div class="card">
             <div class="card-pad review">
@@ -664,32 +668,32 @@
           <div class="card-pad">
           <div class="gallery" aria-label="Gallery grid">
   <figure class="shot" data-full="/images/exterior-1.jpeg">
-    <img alt="interior & exterior clean" src="/images/exterior-1.jpeg" />
+    <img alt="interior & exterior clean" src="/images/exterior-1.jpeg" loading="lazy" decoding="async"/>
     <figcaption class="label">Interior & Exterior</figcaption>
   </figure>
 
   <figure class="shot" data-full="/images/Interior-1.jpeg">
-    <img alt="Interior Clean" src="/images/Interior-1.jpeg" />
-    <figcaption class="label">Interior Drvier</figcaption>
+    <img alt="Interior Clean" src="/images/Interior-1.jpeg" loading="lazy" decoding="async" />
+    <figcaption class="label">Interior Driver</figcaption>
   </figure>
 
   <figure class="shot" data-full="/images/exterior-3.jpeg">
-    <img alt="Exterior Clean" src="/images/exterior-3.jpeg" />
+    <img alt="Exterior Clean" src="/images/exterior-3.jpeg" loading="lazy" decoding="async" />
     <figcaption class="label">Exterior side view</figcaption>
   </figure>
 
   <figure class="shot" data-full="/images/exterior-6.jpeg">
-    <img alt="Exterior Detail front view" src="/images/exterior-6.jpeg" />
+    <img alt="Exterior Detail front view" src="/images/exterior-6.jpeg" loading="lazy" decoding="async" />
     <figcaption class="label">Exterior front view</figcaption>
   </figure>
 
   <figure class="shot" data-full="/images/Interior-3.jpeg">
-    <img alt="Interior Detail" src="/images/Interior-3.jpeg" />
+    <img alt="Interior Detail" src="/images/Interior-3.jpeg" loading="lazy" decoding="async" />
     <figcaption class="label">Interior Passenger</figcaption>
   </figure>
 
   <figure class="shot" data-full="/images/exterior-soap.png">
-    <img alt="Exterior soapy car" src="/images/exterior-soap.png" />
+    <img alt="Exterior soapy car" src="/images/exterior-soap.png" loading="lazy" decoding="async" />
     <figcaption class="label">Exterior clean</figcaption>
               </figure>
             </div>
@@ -760,7 +764,7 @@
         <div class="section-head">
           <div>
             <h2>Contact</h2>
-            <p>Quick questions, special requests, or pricing. Keep it easy to reach you.</p>
+            <p>Feel free to reach out to ask us questions about pricing, scheduling, or anything else.</p>
           </div>
         </div>
 
