@@ -40,7 +40,7 @@ window.siteContent = {
         addons: [
             {
                 name: "Car Seat Cleaning",
-                desc: "Deep cleaning for spills and stains",
+                desc: "Deep cleaning for spills and stains.",
                 price: "$25",
                 unit: "/ seat",
                 icon: "fa-baby-carriage"
@@ -89,4 +89,5 @@ window.siteContent = {
         }
     ]
 };
+
 
