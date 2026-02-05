@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Exotic Detailers offers premium mobile auto detailing in Omaha, Gretna, and Elkhorn. We bring showroom-level cleaning to your driveway. Shampoo, wax, interior & exterior. Book online.">
+  <meta name="keywords"
+    content="Mobile Detailing Omaha, Auto Detailing Omaha, Car Detailing Gretna, Mobile Car Wash Elkhorn, Interior Detail, Exterior Detail">
+  <title>Exotic Detailers | Mobile Detailing Omaha, Gretna & Elkhorn</title>
+  <link rel="icon" href="images/Logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome for Icons (Optimized loading) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+
+  <!-- SEO Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Exotic Detailers",
+    "image": "https://exoticdetailers.com/images/Logo.png",
+    "telephone": "402-619-9696",
+    "email": "exoticdetailers00@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Omaha",
+      "addressRegion": "NE",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.2565,
+      "longitude": -95.9345
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "16:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$75 - $200",
+    "areaServed": ["Omaha", "Gretna", "Elkhorn", "Papillion", "La Vista"],
+    "description": "Premium mobile auto detailing service in Omaha by high school seniors. Showroom-level clean at your driveway."
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#top" class="brand">
+          <img src="images/Logo.png" alt="Exotic Detailers Logo">
+          <span>Exotic Detailers</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#pricing">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="https://squareup.com/appointments/book/L9FFVPCXBDEJK/exotic-detailers-omaha-ne" target="_blank"
+            class="btn btn-primary btn-header">Book Now</a>
+          <button class="mobile-toggle" id="mobile-btn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#booking">Book Now</a>
+    <a href="#about">About</a>
+    <a href="#pricing">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="badge">Currently serving Omaha & Surrounding Areas</div>
+            <h1>Premium Mobile Detailing in Omaha.<br>Right in Your Driveway.</h1>
+            <p class="lead">
+              We are high school seniors delivering professional-grade mobile detailing.
+              Reliable, transparent, and focused on perfection.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="https://squareup.com/appointments/book/L9FFVPCXBDEJK/exotic-detailers-omaha-ne" target="_blank"
+                class="btn btn-primary">Book Appointment</a>
+              <a href="#gallery" class="btn btn-outline">View Our Work</a>
+            </div>
+
+
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+              <!-- Using a representative showcase image -->
+              <img src="images/exterior-1.jpeg" alt="Pristine car exterior">
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>Student Owned & Pro Trusted</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Easy Payment Options</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-tag"></i>
+            <span>Transparent Flat Rates</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table (Moved Up) -->
+    <section id="pricing" class="fade-up" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Transparent Pricing</h2>
+          <p>Choose the package that fits your needs.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Exterior -->
+          <div class="price-card">
+            <h3>Exterior Detail</h3>
+            <div class="price">$75 - $150</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i> Foam Cannon Wash</li>
+              <li><i class="fa-solid fa-check"></i> Wheel Deep Clean</li>
+              <li><i class="fa-solid fa-check"></i> Bug & Tar Removal</li>
+              <li><i class="fa-solid fa-check"></i> Tire Dressing</li>
+            </ul>
+          </div>
+
+          <!-- Interior -->
+          <div class="price-card">
+            <h3>Interior Reset</h3>
+            <div class="price">$100 - $150</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i> Deep Vacuum</li>
+              <li><i class="fa-solid fa-check"></i> Leather Conditioning</li>
+              <li><i class="fa-solid fa-check"></i> Window Cleaning</li>
+              <li><i class="fa-solid fa-check"></i> Door Jambs</li>
+            </ul>
+          </div>
+
+          <!-- Full -->
+          <div class="price-card popular">
+            <div class="pop-tag">Most Popular</div>
+            <h3>Full Deep Clean</h3>
+            <div class="price">$150 - $200</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i> <strong>Everything in Exterior</strong></li>
+              <li><i class="fa-solid fa-check"></i> <strong>Everything in Interior</strong></li>
+              <li><i class="fa-solid fa-check"></i> Engine Bay Wipe</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="addon-section" style="margin-top: 4rem;">
+          <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">Common Optional Add-ons</h3>
+          <div class="grid-2">
+            <div class="addon-card">
+              <div class="addon-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+              <div class="addon-info">
+                <h4>Car Seat Cleaning</h4>
+                <p>Deep steam and extraction for spills and stains.</p>
+              </div>
+              <div class="addon-price">$25 <span style="font-size: 0.8rem; font-weight: 400;">/ seat</span></div>
+            </div>
+
+            <div class="addon-card">
+              <div class="addon-icon"><i class="fa-solid fa-dog"></i></div>
+              <div class="addon-info">
+                <h4>Pet Hair Removal</h4>
+                <p>Thorough removal of embedded pet hair.</p>
+              </div>
+              <div class="addon-price">$15 <span style="font-size: 0.8rem; font-weight: 400;">flat fee</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Booking -->
+    <section id="booking" style="background: rgba(0,0,0,0.2); padding: 5rem 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ready to Book?</h2>
+          <p>Select a time that works for you. We'll handle the rest.</p>
+        </div>
+
+        <div class="card"
+          style="max-width: 800px; margin: 0 auto; min-height: 600px; text-align: center; display: flex; align-items: center; justify-content: center; background: white;">
+          <!-- Embedding the Square Widget -->
+          <div style="width: 100%;">
+            <script src='https://square.site/appointments/buyer/widget/dr8tm3jhl8j3hv/L9FFVPCXBDEJK.js' async></script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="requirements-section fade-up">
+      <div class="container">
+        <div class="section-head">
+          <h2>Before We Arrive</h2>
+          <div class="divider"></div>
+          <p>A few things we need to ensure the best possible service.</p>
+        </div>
+
+        <div class="requirements-grid">
+          <div class="req-card">
+            <div class="req-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Water & Power</h3>
+            <p>We require access to a water spigot and electrical outlet within 100ft of the vehicle.</p>
+          </div>
+
+          <div class="req-card">
+            <div class="req-icon"><i class="fa-solid fa-car"></i></div>
+            <h3>Workspace</h3>
+            <p>Please ensure there is ample space in your driveway or garage for us to park and work around the car.</p>
+          </div>
+
+          <div class="req-card">
+            <div class="req-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h3>Personal Items</h3>
+            <p>Please remove all personal belongings, valuables, and large debris from the vehicle before our arrival.
+            </p>
+          </div>
+
+          <div class="req-card">
+            <div class="req-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Cancellations</h3>
+            <p>We kindly ask for at least 24 hours notice if you need to reschedule or cancel your appointment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recent Work</h2>
+          <p>Real results from real clients. Click to expand.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="images/IMG_E0329.JPG">
+            <img src="images/IMG_E0329.JPG" alt="Detailing Work" loading="lazy">
+            <div class="gallery-overlay"><span>Showroom Shine</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/IMG_E0341.JPG">
+            <img src="images/IMG_E0341.JPG" alt="Interior Detail" loading="lazy">
+            <div class="gallery-overlay"><span>Interior Perfection</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/IMG_E0330.JPG">
+            <img src="images/IMG_E0330.JPG" alt="Exterior" loading="lazy">
+            <div class="gallery-overlay"><span>Mirror Finish</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/IMG_E0342.JPG">
+            <img src="images/IMG_E0342.JPG" alt="Wheel Detail" loading="lazy">
+            <div class="gallery-overlay"><span>Wheel Deep Clean</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/exterior-soap.png">
+            <img src="images/exterior-soap.png" alt="Foam Cannon" loading="lazy">
+            <div class="gallery-overlay"><span>Foam Bath</span></div>
+          </div>
+          <div class="gallery-item" data-src="images/IMG_E0346.JPG">
+            <img src="images/IMG_E0346.JPG" alt="Final Touch" loading="lazy">
+            <div class="gallery-overlay"><span>Ready to Roll</span></div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="gallery.html" target="_blank" class="btn btn-outline" style="padding: 12px 24px;">
+            <i class="fa-solid fa-images"></i> Explore More Photos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After Slider -->
+    <section class="fade-up" style="padding: 5rem 0; background: rgba(0,0,0,0.1);">
+      <div class="container">
+        <div class="section-head">
+          <h2>See the Difference</h2>
+          <p>Drag the slider to see the transformation.</p>
+        </div>
+
+        <div class="ba-slider" id="ba-slider">
+          <div class="ba-before">
+            <img src="images/before.jpg.JPG" alt="Dirty Car" loading="lazy">
+          </div>
+          <div class="ba-after">
+            <img src="images/after.jpg.JPG" alt="Clean Car" loading="lazy">
+          </div>
+          <div class="ba-handle">
+            <div class="ba-line"></div>
+            <div class="ba-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Reviews -->
+    <section id="reviews" class="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Customer Reviews</h2>
+          <p>See what your neighbors in Omaha are saying.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"Fast and convenient! My car looked and smelled brand new!"
+            </p>
+            <div class="reviewer">
+              <span>Laura P.</span>
+              <span>Full Detail</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"These guys were quick, professional, and did a great job on my VW!"</p>
+            <div class="reviewer">
+              <span>Anonymous</span>
+              <span>Full Detail</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"They did an amazing job on my Jeep! Next time I will remember to put the doors on to get
+              an
+              exterior detail as well!"</p>
+            <div class="reviewer">
+              <span>Lucas N.</span>
+              <span>Interior Reset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Meet the Team</h2>
+          <p>Driven by passion and a commitment to quality.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="images/owen.jpg.JPG" alt="Owen Mathews" class="team-img" id="owen-profile" loading="lazy">
+            <div class="team-info">
+              <h3>Owen Mathews</h3>
+              <!-- <span class="role">Co-Owner & Operations</span> -->
+              <p>
+                Owen is a co-owner known for his attention to detail and commitment to doing every job the right way.
+                He’s also the brain behind day-to-day operations—organizing schedules, refining the process, and
+                communicating clearly with customers to ensure every service runs smoothly from start to finish.
+              </p>
+              <div class="team-tags">
+                <span class="tag">Operations</span>
+                <span class="tag">Customer communication</span>
+                <span class="tag">Commitment to Detail</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="images/aidan.jpg.JPG" alt="Aidan Erkes" class="team-img" id="aidan-profile" loading="lazy">
+            <div class="team-info">
+              <h3>Aidan Erkes</h3>
+              <!-- <span class="role">Co-Owner & Inventory</span> -->
+              <p>
+                Aidan is a co-owner who leads product selection and inventory management,
+                ensuring the team uses the right materials for every service and stays fully
+                stocked for mobile appointments.
+              </p>
+              <div class="team-tags">
+                <span class="tag">Inventory</span>
+                <span class="tag">Customer Communication</span>
+                <span class="tag">Product Selection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-content">
+            <h2>Get in Touch</h2>
+            <p class="lead" style="margin: 0 auto;">Questions? Text us, call us, or send an email.</p>
+
+            <div class="detail-row">
+              <div class="detail-item">
+                <strong>Phone / Text</strong>
+                <a href="tel:+14026199696" style="color: var(--accent-primary);">(402) 619-9696</a>
+              </div>
+              <div class="detail-item">
+                <strong>Email</strong>
+                <a href="mailto:exoticdetailers00@gmail.com"
+                  style="color: var(--accent-primary);">exoticdetailers00@gmail.com</a>
+              </div>
+              <div class="detail-item">
+                <strong>Service Area</strong>
+                <span>Omaha, Gretna, Elkhorn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- Lightbox Container -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-nav prev" id="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="Zoomed View">
+    </div>
+    <button class="lightbox-nav next" id="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>Exotic Detailers</h3>
+        <p>Premium mobile detailing services in Omaha, NE and surrounding areas. We bring the shop to you.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Packages</a></li>
+          <li><a href="gallery.html">Full Gallery</a></li>
+          <li><a href="#contact">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> exoticdetailers00@gmail.com</li>
+          <li><i class="fa-solid fa-location-dot"></i> Omaha, NE</li>
+          <li><i class="fa-solid fa-clock"></i> Mon-Fri: Evenings</li>
+          <li><i class="fa-solid fa-clock"></i> Sat-Sun: 9am - 6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Exotic Detailers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
