@@ -8,7 +8,7 @@ window.siteContent = {
         packages: [
             {
                 name: "Exterior Detail",
-                price: "$75 - $150",
+                price: "$50 - $125",
                 features: [
                     "Foam Cannon Wash",
                     "Wheel Deep Clean",
@@ -18,7 +18,7 @@ window.siteContent = {
             },
             {
                 name: "Interior Reset",
-                price: "$100 - $150",
+                price: "$125 - $175",
                 features: [
                     "Deep Vacuum",
                     "Leather Conditioning",
@@ -48,7 +48,7 @@ window.siteContent = {
             {
                 name: "Pet Hair Removal",
                 desc: "Thorough removal of embedded pet hair.",
-                price: "$15",
+                price: "$25",
                 unit: "flat fee",
                 icon: "fa-dog"
             }
