@@ -87,7 +87,7 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#pricing">Services</a>
-          <a href="#gallery">Gallery</a>
+          <a href="#gallery">Work</a>
           <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </div>
@@ -107,7 +107,7 @@
     <a href="#booking">Book Now</a>
     <a href="#about">About</a>
     <a href="#pricing">Services</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#gallery">Work</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </div>
@@ -237,46 +237,92 @@
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Gallery (Marquee Carousel) -->
     <section id="gallery" style="padding: 5rem 0;">
       <div class="container">
         <div class="section-head">
           <h2>Recent Work</h2>
-          <p>Real results from real clients. Click to expand.</p>
+          <p>Real results from real clients. Click any photo to expand.</p>
         </div>
+      </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item" data-src="images/IMG_E0329.JPG">
-            <img src="images/IMG_E0329.JPG" alt="Detailing Work" loading="lazy">
-            <div class="gallery-overlay"><span>Showroom Shine</span></div>
+      <!-- Full-bleed marquee, two rows moving opposite directions -->
+      <div class="marquee" aria-label="Gallery of recent detailing work">
+        <div class="marquee-track" data-direction="left">
+          <!-- Row 1 - images duplicated for seamless loop -->
+          <div class="marquee-item" data-src="images/IMG_E0329.JPG">
+            <img src="images/IMG_E0329.JPG" alt="Detail shot of exterior" loading="lazy">
           </div>
-          <div class="gallery-item" data-src="images/IMG_E0341.JPG">
-            <img src="images/IMG_E0341.JPG" alt="Interior Detail" loading="lazy">
-            <div class="gallery-overlay"><span>Interior Perfection</span></div>
+          <div class="marquee-item" data-src="images/IMG_E0330.JPG">
+            <img src="images/IMG_E0330.JPG" alt="Mirror finish exterior" loading="lazy">
           </div>
-          <div class="gallery-item" data-src="images/IMG_E0330.JPG">
-            <img src="images/IMG_E0330.JPG" alt="Exterior" loading="lazy">
-            <div class="gallery-overlay"><span>Mirror Finish</span></div>
+          <div class="marquee-item" data-src="images/IMG_E0332.JPG">
+            <img src="images/IMG_E0332.JPG" alt="Detail work" loading="lazy">
           </div>
-          <div class="gallery-item" data-src="images/IMG_E0342.JPG">
-            <img src="images/IMG_E0342.JPG" alt="Wheel Detail" loading="lazy">
-            <div class="gallery-overlay"><span>Wheel Deep Clean</span></div>
+          <div class="marquee-item" data-src="images/IMG_E0335.JPG">
+            <img src="images/IMG_E0335.JPG" alt="Detail work" loading="lazy">
           </div>
-          <div class="gallery-item" data-src="images/exterior-soap.png">
-            <img src="images/exterior-soap.png" alt="Foam Cannon" loading="lazy">
-            <div class="gallery-overlay"><span>Foam Bath</span></div>
+          <div class="marquee-item" data-src="images/IMG_E0339.JPG">
+            <img src="images/IMG_E0339.JPG" alt="Detail work" loading="lazy">
           </div>
-          <div class="gallery-item" data-src="images/IMG_E0346.JPG">
-            <img src="images/IMG_E0346.JPG" alt="Final Touch" loading="lazy">
-            <div class="gallery-overlay"><span>Ready to Roll</span></div>
+          <div class="marquee-item" data-src="images/IMG_E0340.JPG">
+            <img src="images/IMG_E0340.JPG" alt="Detail work" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/IMG_E0341.JPG">
+            <img src="images/IMG_E0341.JPG" alt="Interior perfection" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/exterior-1.jpeg">
+            <img src="images/exterior-1.jpeg" alt="Exterior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/exterior-2.jpeg">
+            <img src="images/exterior-2.jpeg" alt="Exterior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/exterior-3.jpeg">
+            <img src="images/exterior-3.jpeg" alt="Exterior detail" loading="lazy">
           </div>
         </div>
+      </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="gallery.html" target="_blank" class="btn btn-outline" style="padding: 12px 24px;">
-            <i class="fa-solid fa-images"></i> Explore More Photos
-          </a>
+      <div class="marquee" aria-hidden="true" style="margin-top: 1rem;">
+        <div class="marquee-track" data-direction="right">
+          <!-- Row 2 - moves opposite direction -->
+          <div class="marquee-item" data-src="images/IMG_E0342.JPG">
+            <img src="images/IMG_E0342.JPG" alt="Wheel deep clean" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/IMG_E0343.JPG">
+            <img src="images/IMG_E0343.JPG" alt="Detail work" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/IMG_E0344.JPG">
+            <img src="images/IMG_E0344.JPG" alt="Detail work" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/IMG_E0346.JPG">
+            <img src="images/IMG_E0346.JPG" alt="Ready to roll" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/IMG_E0347.JPG">
+            <img src="images/IMG_E0347.JPG" alt="Detail work" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/Interior-1.jpeg">
+            <img src="images/Interior-1.jpeg" alt="Interior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/Interior-2.jpeg">
+            <img src="images/Interior-2.jpeg" alt="Interior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/Interior-3.jpeg">
+            <img src="images/Interior-3.jpeg" alt="Interior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/exterior-4.jpeg">
+            <img src="images/exterior-4.jpeg" alt="Exterior detail" loading="lazy">
+          </div>
+          <div class="marquee-item" data-src="images/exterior-5.jpeg">
+            <img src="images/exterior-5.jpeg" alt="Exterior detail" loading="lazy">
+          </div>
         </div>
+      </div>
+
+      <div class="container" style="text-align: center; margin-top: 3rem;">
+        <a href="gallery.html" target="_blank" class="btn btn-outline" style="padding: 12px 24px;">
+          <i class="fa-solid fa-images"></i> See Full Portfolio
+        </a>
       </div>
     </section>
 
@@ -369,16 +415,17 @@
 
   <!-- Lightbox Container -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-nav prev" id="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="lightbox-content">
-      <img src="" alt="Zoomed View">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <img src="" alt="Zoomed View" id="lightbox-img">
     </div>
-    <button class="lightbox-nav next" id="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="lightbox-nav next" id="lightbox-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
 
 
-  <!-- Footer -->
+  <!-- Footer (gallery link kept here for SEO discoverability) -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -393,10 +440,10 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Packages</a></li>
-          <li><a href="gallery.html">Full Gallery</a></li>
-          <li><a href="#contact">Book Now</a></li>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#pricing">Packages</a></li>
+          <li><a href="gallery.html">Full Portfolio</a></li>
+          <li><a href="#booking">Book Now</a></li>
         </ul>
       </div>
 
@@ -423,9 +470,6 @@
 
   <script src="content.js"></script>
   <script src="script.js" defer></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 
 

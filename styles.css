@@ -345,7 +345,7 @@ nav {
   font-size: 0.95rem;
 }
 
-/* Gallery */
+/* Gallery (kept for gallery.html page) */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -395,6 +395,121 @@ nav {
 .gallery-overlay span {
   color: white;
   font-weight: 600;
+}
+
+/* ===========================
+   MARQUEE CAROUSEL
+   =========================== */
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Fade edges so images appear to flow in/out of the page */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  /* Animate the track. Duration scaled by track width for consistent speed. */
+  animation: marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track[data-direction="right"] {
+  animation-direction: reverse;
+}
+
+/* Pause on hover so user can inspect */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 360px;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.03);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.25);
+  z-index: 2;
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.marquee-item:hover img {
+  transform: scale(1.08);
+}
+
+/* The animation translates by 50% because the track has its content duplicated
+   via JS. This creates a seamless infinite loop. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee-item {
+    scroll-snap-align: start;
+  }
+}
+
+/* Mobile sizing */
+@media (max-width: 768px) {
+  .marquee-item {
+    width: 260px;
+  }
+  .marquee-track {
+    animation-duration: 45s;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-item {
+    width: 220px;
+  }
 }
 
 /* Reviews */
@@ -682,6 +797,33 @@ footer {
   max-height: 85vh;
   border-radius: 8px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-content {
+  position: relative;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  z-index: 1011;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .lightbox-nav {

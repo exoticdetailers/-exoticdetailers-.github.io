@@ -71,6 +71,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // --- MARQUEE CAROUSEL SETUP ---
+  // Duplicate each track's children so the CSS translateX(-50%) animation loops seamlessly.
+  // Also pauses animation when offscreen (saves CPU/battery and lowers paint cost).
+  const marqueeTracks = document.querySelectorAll('.marquee-track');
+  marqueeTracks.forEach(track => {
+    // Clone each child once. The CSS keyframe translates by -50% of the track width,
+    // which matches exactly one full set of the original items.
+    const items = Array.from(track.children);
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      // Clones should not be focusable/navigable in the lightbox — we tag them
+      // so the lightbox click handler can build a deduped list from originals only.
+      clone.dataset.clone = 'true';
+      track.appendChild(clone);
+    });
+  });
+
+  // Pause marquee animations when not in viewport (performance win on long pages)
+  const marquees = document.querySelectorAll('.marquee');
+  if ('IntersectionObserver' in window && marquees.length) {
+    const marqueeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const track = entry.target.querySelector('.marquee-track');
+        if (!track) return;
+        track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0 });
+
+    marquees.forEach(m => marqueeObserver.observe(m));
+  }
+
+
   // Mobile Menu Toggle
   const mobileBtn = document.getElementById('mobile-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -102,47 +135,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lightbox Functionality
+  // --- LIGHTBOX (supports both .gallery-item and .marquee-item) ---
   const lightbox = document.getElementById('lightbox');
 
   if (lightbox) {
     const lightboxImg = lightbox.querySelector('img');
-    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
     const prevBtn = document.getElementById('lightbox-prev');
     const nextBtn = document.getElementById('lightbox-next');
-    const closeBtn = document.getElementById('lightbox-close'); // Might exist on gallery page template
+    const closeBtn = document.getElementById('lightbox-close');
+
+    // Build deduped source list: skip cloned marquee items so left/right nav
+    // doesn't feel repetitive.
+    const allItems = Array.from(document.querySelectorAll('.gallery-item, .marquee-item'));
+    const sourceList = [];
+    const seen = new Set();
+    allItems.forEach(item => {
+      if (item.dataset.clone === 'true') return;
+      const src = item.getAttribute('data-src');
+      if (src && !seen.has(src)) {
+        seen.add(src);
+        sourceList.push(src);
+      }
+    });
 
     let currentIndex = 0;
 
     const showImage = (index) => {
-      if (index < 0) index = galleryItems.length - 1;
-      if (index >= galleryItems.length) index = 0;
-
+      if (sourceList.length === 0) return;
+      if (index < 0) index = sourceList.length - 1;
+      if (index >= sourceList.length) index = 0;
       currentIndex = index;
-      const imgSrc = galleryItems[currentIndex].getAttribute('data-src');
-      lightboxImg.src = imgSrc;
+      lightboxImg.src = sourceList[currentIndex];
     };
 
-    galleryItems.forEach((item, index) => {
+    // Click handler: works for clones too (they still open the right image)
+    allItems.forEach(item => {
       item.addEventListener('click', () => {
-        showImage(index);
+        const src = item.getAttribute('data-src');
+        const idx = sourceList.indexOf(src);
+        showImage(idx >= 0 ? idx : 0);
         lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
       });
     });
 
-    // Close on background click
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Close on background click (but not when clicking the image or nav buttons)
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox-content')) {
-        lightbox.classList.remove('active');
-      }
+      if (e.target === lightbox) closeLightbox();
     });
 
-    // Close button (if exists)
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLightbox();
+      });
     }
 
-    // Navigation Buttons
     if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -157,22 +210,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Keyboard Navigation
+    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
-
       if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
       if (e.key === 'ArrowRight') showImage(currentIndex + 1);
-      if (e.key === 'Escape') lightbox.classList.remove('active');
+      if (e.key === 'Escape') closeLightbox();
     });
+
+    // Swipe support for mobile lightbox
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) showImage(currentIndex - 1);
+        else showImage(currentIndex + 1);
+      }
+    }, { passive: true });
   }
 
   // Smooth Scroll for Anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
       if (target) {
+        e.preventDefault();
         target.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
@@ -191,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Only animate once
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -207,18 +274,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const handle = slider.querySelector('.ba-handle');
     let active = false;
 
-    // Adjust before image width to match container for correct masking
-    // In a real scenario, we might handle window resize events to keep them synced
     const updateWidth = () => {
       const w = slider.offsetWidth;
       before.querySelector('img').style.width = w + 'px';
     };
     window.addEventListener('resize', updateWidth);
-
-    // Ensure accurate width calculation after all assets load
     window.addEventListener('load', updateWidth);
-
-    // Initial call
     updateWidth();
 
     const slide = (x) => {
