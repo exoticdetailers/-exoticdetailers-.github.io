@@ -1,0 +1,13 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+image-optimized/
+
+# Package manager lock files should usually be committed
+# If your pipeline installs dependencies from package-lock.json, do not ignore it.
+# package-lock.json
+
+# Optional OS/editor ignores
+.DS_Store
+Thumbs.db
